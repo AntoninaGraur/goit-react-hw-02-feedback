@@ -4,7 +4,7 @@ import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
 import Notification from './Notofication/Notification';
 
-
+import PropTypes from 'prop-types';
 
 
 class App extends React.Component {
@@ -61,3 +61,14 @@ class App extends React.Component {
 }
 
 export default App;
+
+App.propTypes = {
+  stats: PropTypes.objectOf({
+    feedback: {
+      good: PropTypes.number.isRequired,
+      neutral: PropTypes.number.isRequired,
+      bad: PropTypes.number.isRequired,
+    },
+    
+  }),
+}
